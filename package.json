@@ -1,0 +1,41 @@
+{
+  "name": "parquet-files-processor",
+  "version": "1.0.0",
+  "description": "A simple Nodejs App to process parquet files stored on S3",
+  "author": "Sean Xiong",
+  "main": "index.js",
+  "scripts": {
+    "pre-build": "npm install",
+    "fix-pq-module-codec": "cp ./parquetjs-patch/codec/index.js ./node_modules/parquetjs-lite/lib/codec/",
+    "fix-pq-module-reader": "cp ./parquetjs-patch/reader.js ./node_modules/parquetjs-lite/lib/",
+    "build": "npm run pre-build && npm run fix-pq-module-codec && npm run fix-pq-module-reader",
+    "serve": "npm run  build && node -r dotenv/config ./server.js",
+    "start": "npm run  build && node -r dotenv/config ./index.js",
+    "test": "npm run  build && jest --detectOpenHandles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htxiong/parquet-files-processor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/htxiong/parquet-files-processor/issues"
+  },
+  "homepage": "https://github.com/htxiong/parquet-files-processor#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1267.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "parquetjs-lite": "^0.8.7",
+    "request-promise": "^4.2.6"
+  },
+  "jest": {pwd
+    "testEnvironment": "node",
+    "setupFiles": [
+      "./test/setup.js"
+    ]
+  }
+}

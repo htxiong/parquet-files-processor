@@ -1,0 +1,3 @@
+process.env.AWS_ACCESS_KEY_ID = 'AKIAXKIRCVKQDAKH2CQ4';
+process.env.AWS_ACCESS_KEY_SECRET = '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';
+process.env.DEFAULT_BLOCK_SIZE = 10;
