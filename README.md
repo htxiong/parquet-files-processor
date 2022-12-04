@@ -2,8 +2,12 @@
 A simple Nodejs App to process parquet files stored on S3
 
 ## Patch required for module parquetjs-lite
-There are two small patched i created for *parquetjs-lite* to be able to work with the give testing files. 
-I will fix it properly and create a pull request.
+There are two small patch files created for *parquetjs-lite* to work with the give sample files. 
+I will fix it properly and create a pull request. 
+You can  apply it by executing command.
+``` 
+npm run build
+ ```
 
 ## Getting started
 
