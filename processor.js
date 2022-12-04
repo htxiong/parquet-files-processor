@@ -162,10 +162,13 @@ const process = async ({
         const client = new AWS.S3(s3Credentials);
         console.log('Create reader.');
         const reader = await parquet.ParquetReader.openS3(client, s3Params);
-        const columns = ['score'] // Fetch score column data only
-        const fileSize = reader.envelopeReader.fileSize;
         const numOfRowGroups = reader.metadata.row_groups.length;
+        if (numOfRowGroups === 0) {
+            return { averageScore: 0, numOfRecords: 0 };
+        }
+        const fileSize = reader.envelopeReader.fileSize;
         const rowGroupSize = fileSize / numOfRowGroups;
+        const columns = ['score'] // Fetch score column data only
         let result;
         if (rowGroupSize > DEFAULT_BLOCK_SIZE) {
             result = await processByRows(reader, columns);
