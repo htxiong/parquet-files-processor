@@ -15,6 +15,11 @@ S3_BUCKET=YOUR_AWS_S3_BUCKET
 S3_FILE_KEY=YOUR_AWS_S3_FILE_KEY
 ```
 
+#### Create your local .env.test file, add those 2 rows to it and put it to project root.
+``` 
+AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY_ID
+AWS_ACCESS_KEY_SECRET=YOUR_AWS_ACCESS_KEY_SECRET
+```
 
 #### Install dependencies:
 ``` 

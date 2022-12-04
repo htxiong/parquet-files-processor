@@ -9,9 +9,9 @@
     "fix-pq-module-codec": "cp ./parquetjs-patch/codec/index.js ./node_modules/parquetjs-lite/lib/codec/",
     "fix-pq-module-reader": "cp ./parquetjs-patch/reader.js ./node_modules/parquetjs-lite/lib/",
     "build": "npm run pre-build && npm run fix-pq-module-codec && npm run fix-pq-module-reader",
-    "serve": "npm run  build && node -r dotenv/config ./server.js",
-    "start": "npm run  build && node -r dotenv/config ./index.js",
-    "test": "npm run  build && jest --detectOpenHandles"
+    "serve": "npm run build && node -r dotenv/config ./server.js",
+    "start": "npm run build && node -r dotenv/config ./index.js",
+    "test": "NODE_ENV=test npm run build && jest --detectOpenHandles"
   },
   "repository": {
     "type": "git",
